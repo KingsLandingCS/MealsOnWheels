@@ -7,9 +7,9 @@ import { SignUpFormComponent } from './management-components/sign-up-form/sign-u
 const routes: Routes = [
   {
     path: '', component: ManagementPortalComponent, children: [
-      { path: '', component: LogInFormComponent },
-      { path: 'loginForm', component: LogInFormComponent },
+      { path: '', component: SignUpFormComponent },
       { path: 'signUp', component: SignUpFormComponent },
+      { path: 'loginForm', component: LogInFormComponent },
     ]
   },
 ];
