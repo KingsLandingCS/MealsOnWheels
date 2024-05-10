@@ -5,6 +5,7 @@ import { ManagementPortalRoutingModule } from './management-portal-routing.modul
 import { ManagementPortalComponent } from './management-portal.component';
 import { LogInFormComponent } from './management-components/log-in-form/log-in-form.component';
 import { SignUpFormComponent } from './management-components/sign-up-form/sign-up-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { SignUpFormComponent } from './management-components/sign-up-form/sign-u
   ],
   imports: [
     CommonModule,
-    ManagementPortalRoutingModule
+    ManagementPortalRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class ManagementPortalModule { }
