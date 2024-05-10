@@ -1,0 +1,392 @@
+:root {
+  --light-brown-color: #C8A97E;
+}
+
+// home banner
+.home-wrapper {
+  margin-top: -8rem;
+  z-index: 1;
+  position: relative;
+}
+
+.home-wrapper img {
+  height: 100vh;
+  object-fit: cover;
+}
+
+.home-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 72px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  height: 53%;
+  background-color: rgba(17, 16, 16, 0.6);
+  /* Adjust opacity as needed */
+}
+
+.home-wrapper .carousel-control-prev,
+.home-wrapper .carousel-control-next {
+  margin-block: 410px 415px;
+  height: 42px;
+}
+
+.home-wrapper .carousel-control-prev span i,
+.home-wrapper .carousel-control-next span i {
+
+  font-size: 64px;
+  font-weight: bolder;
+}
+
+// carousel caption
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+
+.carousel-caption h1 {
+  font-size: 3rem;
+  /* Adjust font size as needed */
+}
+
+// second home section
+.second-home-section {
+  position: relative;
+  z-index: 3;
+  margin: -235px 0 150px 0;
+  padding: 0;
+}
+
+.home-box img {
+  width: 128px;
+  height: 128px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.home-box p,
+.home-box small {
+  text-align: center;
+  color: #fff;
+}
+
+.second-home-section::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  /* Thickness of the line */
+  background-color: #fff;
+  /* Color of the line */
+  transform: scaleY(0.1);
+  /* Scale the line vertically */
+  margin-bottom: 10px;
+}
+
+
+// About section
+.about-section .about-box img {
+  margin: 0 10px;
+  width: 40%;
+  height: 80%;
+  transform: skew(-16deg);
+  -webkit-transform: skew(-16deg);
+  -moz-transform: skew(-16deg);
+}
+
+.about-section .about-box-content {
+  margin-inline: 20%;
+}
+
+.second-row .col-md-3 p {
+  color: #C8A97E;
+}
+
+.second-row .col-md-2 p span {
+  color: #C8A97E;
+}
+
+.second-row .col-md-1 p span {
+  color: #C8A97E;
+}
+
+// Services Section
+.services-section {
+  background: #fafafa;
+}
+
+.services-section .second-row i {
+
+  font-size: 64px;
+  margin: 10px 0;
+  color: #C8A97E;
+}
+
+// Our Menu
+.our-menu .card {
+  margin: 0;
+  height: 100%;
+  border: none;
+}
+
+.our-menu img {
+  height: 200px;
+  width: 100%;
+}
+
+
+// Stories Section
+.stories-section .card-group .card {
+  text-align: center;
+  border: none;
+}
+
+.stories-section .card-group .card img {
+  width: 40%;
+  height: 40%;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+// Contact Section
+.contact-section {
+  background: #fafafa;
+}
+
+.contact-section img {
+  height: 550px;
+  width: 100%;
+
+}
+
+// Media query
+// max-width: 1920px
+@media screen and (max-width: 1920px) {
+
+  .home-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 72px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    height: 21%;
+    background-color: rgba(17, 16, 16, 0.6);
+    /* Adjust opacity as needed */
+  }
+
+}
+
+// max-width: 1600px
+@media screen and (max-width: 1600px) {
+
+  .home-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 72px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    height: 21%;
+    background-color: rgba(17, 16, 16, 0.6);
+    /* Adjust opacity as needed */
+  }
+
+  .contact-section img {
+    height: 550px;
+    width: 100%;
+
+  }
+
+}
+
+// max-width: 1200px
+@media screen and (max-width: 1200px) {
+
+  .home-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 72px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    height: 21%;
+    background-color: rgba(17, 16, 16, 0.6);
+    /* Adjust opacity as needed */
+  }
+}
+
+// max-width: 991px
+@media screen and (max-width: 991px) {
+
+  .home-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 72px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    height: 19%;
+    background-color: rgba(17, 16, 16, 0.6);
+    /* Adjust opacity as needed */
+  }
+
+  .second-home-section {
+    margin: -260px 0 150px 0;
+  }
+
+  .menu-grid-wrapper .card-1 {
+    border-bottom: 1px solid rgb(189, 181, 181);
+  }
+
+  .menu-grid-wrapper .card-2 {
+    border-bottom: 1px solid rgb(189, 181, 181);
+  }
+
+  .menu-grid-wrapper .card-3 {
+    border-bottom: 1px solid rgb(189, 181, 181);
+  }
+
+  .menu-grid-wrapper .card-4 {
+    border-bottom: 1px solid rgb(189, 181, 181);
+  }
+
+  .menu-grid-wrapper .card-5 {
+    border-bottom: 1px solid rgb(189, 181, 181);
+  }
+
+  .menu-grid-wrapper .card-6 {
+    border-bottom: 1px solid rgb(189, 181, 181);
+  }
+
+  .third-row-container .card {
+    margin-bottom: 0;
+  }
+
+}
+
+// max-width: 767px
+@media screen and (max-width: 767px) {
+
+  .home-wrapper::before {
+    height: 47%;
+  }
+
+  .second-home-section {
+    margin: 35px 0 150px 0;
+  }
+
+  .home-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 72px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    height: 8%;
+    background-color: rgba(17, 16, 16, 0.6);
+    /* Adjust opacity as needed */
+  }
+
+  .home-box img {
+    width: 84px;
+    height: 84px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .home-box p {
+    font-weight: 500;
+  }
+
+  .home-box p,
+  .home-box small {
+    color: #000;
+    margin: 10px 0;
+  }
+
+  .about-section .about-box {
+    margin: 0 110px 20px 0;
+
+  }
+
+  .about-section .about-box img {
+    margin: 0;
+    width: 40%;
+    height: 80%;
+    transform: skew(-16deg);
+    -webkit-transform: skew(-16deg);
+    -moz-transform: skew(-16deg);
+  }
+
+}
+
+@media screen and (max-width: 611px) {
+
+  .home-wrapper {
+    margin-top: -10rem;
+  }
+
+  .home-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 72px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    height: 10%;
+    background-color: rgba(17, 16, 16, 0.6);
+    /* Adjust opacity as needed */
+  }
+
+
+}
+
+@media screen and (min-height: 667px) {
+
+  .home-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 72px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    height: 15%;
+    background-color: rgba(17, 16, 16, 0.6);
+    /* Adjust opacity as needed */
+  }
+
+}
+
+@media screen and (max-height: 661px) {
+
+  .home-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 72px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    height: 12%;
+    background-color: rgba(17, 16, 16, 0.6);
+    /* Adjust opacity as needed */
+  }
+
+}
+
+@media screen and (max-width: 575px) {}
