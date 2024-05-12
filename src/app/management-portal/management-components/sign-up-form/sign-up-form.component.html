@@ -1,86 +1,51 @@
-<div class="container mt-5">
-  <input type="checkbox" id="flip">
-  <div class="cover">
-    <div class="front">
-      <img src="../../../../assets/cuisine-2.jpg" alt="">
-      <div class="text">
-        <span class="text-1">Every new friend is a <br> new adventure</span>
-        <span class="text-2">Let's get connected</span>
-      </div>
-    </div>
-    <div class="back">
-      <!--<img class="backImg" src="images/backImg.jpg" alt="">-->
-      <div class="text">
-        <span class="text-1">Complete miles of journey <br> with one step</span>
-        <span class="text-2">Let's get started</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- step 3. Create a use (ngSubmit) to call method -->
-  <!-- step 4. Bind the property with formGroup -->
+<div class="container">
   <form (ngSubmit)="submitRegisterForm()" [formGroup]="userRegisterForm">
-    <div class="forms">
-      <div class="form-content">
-        <!-- <div class="login-form">
-          <div class="title">Login</div>
-          <form action="#">
-            <div class="input-boxes">
-              <div class="input-box">
-                <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Enter your email">
-              </div>
-              <div class="input-box">
-                <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Enter your password">
-              </div>
-              <div class="text"><a href="#">Forgot password?</a></div>
-              <div class="button input-box">
-                <input type="submit" value="Sumbit">
-              </div>
-              <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
-            </div>
-          </form>
-        </div> -->
 
-        <div class="signup-form">
-          <div class="title">Signup</div>
-          <form action="#">
-            <div class="input-boxes">
-              <div class="input-box">
-                <i class="fas fa-user"></i>
-                <input type="text" placeholder="Enter your name" formControlName="name">
-                <!-- name validation  -->
-                <div class="error  text-danger"
-                  *ngIf="userRegisterForm.controls['name'].invalid && (userRegisterForm.controls['name'].dirty || userRegisterForm.controls['name'].touched)">
-                  <span
-                    *ngIf="userRegisterForm.controls['name'].errors.minlength || userRegisterForm.controls['name'].errors.maxlength ">
-                    <small>Name between 4 to 20 Characters!</small></span>
-                  <span *ngIf="(userRegisterForm.controls['name'].errors.pattern)">
-                    Only Alphabets & Spaces Allowed</span>
-                  <span *ngIf="userRegisterForm.controls['name'].errors.required">
-                    <small>Field Required!</small>
-                  </span>
-                </div>
-              </div>
-
-              <div class="input-box">
-                <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Enter your email" formControlName="email">
-                <!-- email validation  -->
-              </div>
-              <div class="input-box">
-                <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Enter your password" formControlName="password">
-              </div>
-              <div class="button input-box">
-                <input type="submit" value="Sumbit">
-              </div>
-              <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
-            </div>
-          </form>
-        </div>
+    <!-- name field -->
+    <div class="mb-3">
+      <label>Name</label>
+      <input type="text" class="form-control" formControlName="name">
+      <!-- name validation  -->
+      <div class="error  text-danger"
+        *ngIf="userRegisterForm.controls['name'].invalid && (userRegisterForm.controls['name'].dirty || userRegisterForm.controls['name'].touched)">
+        <span
+          *ngIf="userRegisterForm.controls['name'].errors.minlength || userRegisterForm.controls['name'].errors.maxlength ">
+          <small>Name between 4 to 20 Characters!</small></span>
+        <span *ngIf="(userRegisterForm.controls['name'].errors.pattern)">
+          Only Alphabets & Spaces Allowed</span>
+        <span *ngIf="userRegisterForm.controls['name'].errors.required">
+          <small>Field Required!</small>
+        </span>
       </div>
     </div>
 
+    <!-- email field -->
+    <div class="mb-3">
+      <label>Email address</label>
+      <input type="email" class="form-control" formControlName="email">
+      <!-- email validation -->
+      <div class="error  text-danger"
+        *ngIf="userRegisterForm.controls['email'].invalid && (userRegisterForm.controls['email'].dirty || userRegisterForm.controls['email'].touched)">
+        <span *ngIf="userRegisterForm.controls['email'].errors.required">
+          <small>Field Required!</small>
+        </span>
+      </div>
+    </div>
+
+    <!-- password field -->
+    <div class="mb-3">
+      <label>Password</label>
+      <input type="password" class="form-control" formControlName="password">
+      <!-- password validation -->
+      <div class="error  text-danger"
+        *ngIf="userRegisterForm.controls['password'].invalid && (userRegisterForm.controls['password'].dirty || userRegisterForm.controls['password'].touched)">
+        <span *ngIf="userRegisterForm.controls['password'].errors.required">
+          <small>Field Required!</small>
+        </span>
+      </div>
+    </div>
+
+    <!-- submit button -->
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+</div>
