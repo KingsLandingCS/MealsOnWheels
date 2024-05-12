@@ -26,7 +26,7 @@ export class SignUpFormComponent implements OnInit {
   }
 
   submitRegisterForm() {                    // step 2. Create a Method
-    console.log('submitRegisterForm');
+    console.log(this.userRegisterForm.value);
   }
 
 }

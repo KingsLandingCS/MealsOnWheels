@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-5">
   <form (ngSubmit)="submitRegisterForm()" [formGroup]="userRegisterForm">
 
     <!-- name field -->
@@ -46,6 +46,8 @@
     </div>
 
     <!-- submit button -->
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="userRegisterForm.invalid">Submit</button>
   </form>
+  <small class="mt-4">If already Signed up then go to <a routerLink="
+    /management-portal/loginForm">login</a></small>
 </div>
