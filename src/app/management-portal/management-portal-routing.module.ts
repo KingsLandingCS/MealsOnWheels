@@ -9,7 +9,7 @@ const routes: Routes = [
     path: '', component: ManagementPortalComponent, children: [
       { path: '', component: LogInFormComponent },
       { path: 'loginForm', component: LogInFormComponent },
-      { path: 'signUp', component: SignUpFormComponent },
+      { path: 'signupForm', component: SignUpFormComponent },
     ]
   },
 ];
