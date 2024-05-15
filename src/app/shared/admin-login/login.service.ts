@@ -6,14 +6,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginService {
 
-  constructor(private readonly HttpClient: HttpClient) { }
+  constructor(private readonly HttpClient: HttpClient,
+
+  ) { }
 
   createUser(data: any) {
-    return this.HttpClient.post('localhost:4242/users-management/create-users', data);
+    return this.HttpClient.post('http://localhost:4242/users-management/create-users', data);
   }
 
   loginUser(data: any) {
-    return this.HttpClient.post('localhost:4242/users-management/login-users', data);
+    console.log(data);
+    return this.HttpClient.post('http://localhost:4242/users-management/login-users', data);
   }
 
 }

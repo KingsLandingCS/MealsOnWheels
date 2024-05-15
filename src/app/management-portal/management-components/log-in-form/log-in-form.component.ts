@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { LoginService } from 'src/app/shared/admin-login/login.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class LogInFormComponent implements OnInit {
 
   constructor(
     private readonly formBuilder: FormBuilder,
-    private readonly loginService: LoginService
+    private readonly loginService: LoginService,
+    private readonly toastr: ToastrService,
   ) { }
   ngOnInit(): void {
     this.buildMyLoginForm();
@@ -33,10 +35,9 @@ export class LogInFormComponent implements OnInit {
   }
 
   submitLoginForm() {                    // step 2. Create a Method
-    console.log(this.userLoginForm.value);
     const payload = this.userLoginForm.value;
-    this.loginService.loginUser(payload).subscribe((result: any) => {
-      console.log(result);
+    this.loginService.loginUser(payload).subscribe(({ result, body, data, token }: any) => {
+      this.toastr[data ? "success" : "error"](result);
     });
   }
 }
