@@ -19,4 +19,9 @@ export class LoginService {
     return this.HttpClient.post('http://localhost:4242/users-management/login-users', data);
   }
 
+  saveLoginTokenToLocalStorage(payload: any) {
+    localStorage.setItem('accessToken', payload.token);
+    localStorage.setItem('accessToken', JSON.stringify(payload.userData));
+  }
+
 }

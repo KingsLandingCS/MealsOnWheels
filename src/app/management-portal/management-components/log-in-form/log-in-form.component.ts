@@ -38,6 +38,12 @@ export class LogInFormComponent implements OnInit {
     const payload = this.userLoginForm.value;
     this.loginService.loginUser(payload).subscribe(({ result, body, data, token }: any) => {
       this.toastr[data ? "success" : "error"](result);
+      console.log(result, body, data, token);
+      const gettingData = {
+        token: token,
+        userData: body,
+      };
+      this.loginService.saveLoginTokenToLocalStorage(gettingData);
     });
   }
 }
