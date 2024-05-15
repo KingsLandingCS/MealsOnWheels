@@ -30,6 +30,4 @@ export class LoginService {
   getLoginTokenFromLocalStorage() {
     return localStorage.getItem('accessToken') !== null;
   }
-
-
 }
