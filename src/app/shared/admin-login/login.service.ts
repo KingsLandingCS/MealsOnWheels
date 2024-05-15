@@ -15,13 +15,21 @@ export class LoginService {
   }
 
   loginUser(data: any) {
-    console.log(data);
     return this.HttpClient.post('http://localhost:4242/users-management/login-users', data);
   }
 
   saveLoginTokenToLocalStorage(payload: any) {
     localStorage.setItem('accessToken', payload.token);
-    localStorage.setItem('accessToken', JSON.stringify(payload.userData));
+    localStorage.setItem('userCrendentials', JSON.stringify(payload.userData));
   }
+
+  getUserCredentialsFromLocalStorage() {
+    return JSON.parse(localStorage.getItem('userCrendentials') || '');
+  }
+
+  getLoginTokenFromLocalStorage() {
+    return localStorage.getItem('accessToken') !== null;
+  }
+
 
 }
