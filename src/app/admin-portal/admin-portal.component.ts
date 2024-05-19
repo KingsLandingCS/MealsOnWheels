@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-portal.component.scss']
 })
 export class AdminPortalComponent {
+  public hideSidebar: boolean = false;
 
+  constructor() { }
 }

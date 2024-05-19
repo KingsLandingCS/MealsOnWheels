@@ -1,0 +1,19 @@
+<div class="userInfo py-2">
+  <p class="ms-5 text-white mt-4">
+      <span>Script-One</span>
+  </p>
+</div>
+<hr class="text-white">
+
+<div class="nav-item">
+  <ul>
+   <ng-template ngFor let-menu [ngForOf]="sideBarMenu">
+      <li routerLink={{menu?.link}} routerLinkActive="active">
+          <span role="button" routerLinkActive="active">
+              <i [class]="menu?.icon" routerLinkActive="active"></i>
+          </span>
+          <a role="button" class="ms-3" routerLinkActive="active">{{menu?.name}}</a>
+      </li>
+   </ng-template>
+  </ul>
+</div>
