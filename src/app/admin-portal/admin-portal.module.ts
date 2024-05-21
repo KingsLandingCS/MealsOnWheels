@@ -8,6 +8,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
 import { CreateProductsComponent } from './components/create-products/create-products.component';
 import { AnalyticsComponent } from './components/analytics/analytics.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +22,9 @@ import { AnalyticsComponent } from './components/analytics/analytics.component';
   ],
   imports: [
     CommonModule,
-    AdminPortalRoutingModule
+    AdminPortalRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
   ]
 })
 export class AdminPortalModule { }

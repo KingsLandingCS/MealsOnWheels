@@ -1,1 +1,33 @@
-<p>create-products works!</p>
+<div class="container">
+  <form (ngSubmit)="onSubmit()" [formGroup]="cuisineForm">
+    <div class="mb-3">
+      <label class="form-label">Cuisine name</label>
+      <input type="text" class="form-control" formControlName="name">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Cuisine description</label>
+      <input type="text" class="form-control" formControlName="description">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Cuisine quantity</label>
+      <input type="text" class="form-control" formControlName="quantity">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Cuisine price</label>
+      <input type="text" class="form-control" formControlName="price">
+    </div>
+
+    <div class="mb-3 form-check">
+      <ng-container *ngFor="let ingrediant of Ingrediants">
+        <input  type="checkbox" class="form-check-input checkbox-inline" id="exampleCheck1" #checkbox [value]="ingrediant"
+          (click)="getIngrediants($event)" formControlName="Ingrediants" [id]="ingrediant">
+        <label class="form-check-label" [for]="ingrediant">{{ingrediant}}</label>
+      </ng-container>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

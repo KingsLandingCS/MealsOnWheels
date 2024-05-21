@@ -19,10 +19,9 @@ export class SidebarComponent {
       icon: 'fa-solid fa-sliders'
     },
     {
-      name: 'Products',
-      link: 'product',
+      name: 'products',
+      link: 'products',
       icon: 'fa-solid fa-address-book'
     }
   ]
-
 }

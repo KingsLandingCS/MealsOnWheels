@@ -47,6 +47,7 @@ export class LogInFormComponent implements OnInit {
         token: token,
         userData: body,
       };
+
       this.loginService.saveLoginTokenToLocalStorage(gettingData);
       this.token = token;
       const { role } = body;
