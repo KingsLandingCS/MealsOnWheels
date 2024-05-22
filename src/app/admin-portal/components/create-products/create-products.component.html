@@ -21,9 +21,9 @@
     </div>
 
     <div class="mb-3 form-check">
-      <ng-container *ngFor="let ingrediant of Ingrediants">
-        <input  type="checkbox" class="form-check-input checkbox-inline" id="exampleCheck1" #checkbox [value]="ingrediant"
-          (click)="getIngrediants($event)" formControlName="Ingrediants" [id]="ingrediant">
+      <ng-container *ngFor="let ingrediant of Ingrediants let i=index;">
+        <input type="checkbox" class="form-check-input checkbox-inline" id="exampleCheck1" #checkbox
+          [value]="ingrediant" (click)="getIngrediants($event)" formControlName="Ingrediants" [id]="ingrediant">
         <label class="form-check-label" [for]="ingrediant">{{ingrediant}}</label>
       </ng-container>
     </div>

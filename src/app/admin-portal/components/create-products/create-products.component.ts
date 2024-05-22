@@ -35,6 +35,4 @@ export class CreateProductsComponent {
   onSubmit() {
     console.log(this.cuisineForm.value);
   }
-
-
 }
