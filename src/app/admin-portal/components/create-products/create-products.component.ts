@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -9,7 +9,8 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 export class CreateProductsComponent {
   public Ingrediants = ['tomatoes', 'rice', 'cheese', 'chicken', 'red chilli', 'green chilli', 'onions', 'water'];
   public cuisineForm: FormGroup | any;
-
+  public getArrayOfIngrediants: any = [];
+  @ViewChild('checkbox') checkbox!: any;
 
   constructor(private readonly formBuilder: FormBuilder) { }
 
@@ -20,8 +21,8 @@ export class CreateProductsComponent {
 
   cuisineFormModel() {
     this.cuisineForm = this.formBuilder.group({
-      name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
-      description: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
+      name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]),
+      description: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(60)]),
       quantity: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
       price: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
       Ingrediants: new FormArray([])
@@ -29,10 +30,22 @@ export class CreateProductsComponent {
   }
 
   getIngrediants(event: any) {
-    console.log(event);
+    if (event.target.checked) {
+      this.getArrayOfIngrediants.push(event.target.value);
+    } else {
+      this.getArrayOfIngrediants = this.getArrayOfIngrediants.filter((item: any) => item !== event.target.value);
+    }
+
+    console.log(event.target.value);
   }
 
   onSubmit() {
+    this.getArrayOfIngrediants.forEach((element: any) => {
+      let formControl = new FormControl(element);
+      this.cuisineForm.get('Ingrediants').push(formControl);
+    });
     console.log(this.cuisineForm.value);
+    this.cuisineForm.reset();
+    this.getArrayOfIngrediants = [];
   }
 }
