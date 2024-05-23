@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -10,7 +10,9 @@ export class CreateProductsComponent {
   public Ingrediants = ['tomatoes', 'rice', 'cheese', 'chicken', 'red chilli', 'green chilli', 'onions', 'water'];
   public cuisineForm: FormGroup | any;
   public getArrayOfIngrediants: any = [];
-  @ViewChild('checkbox') checkbox!: any;
+  @ViewChildren('checkbox') checkbox: QueryList<ElementRef> | any;
+  @ViewChild('file') file: ElementRef | any;
+  public imageArray: any = [];
 
   constructor(private readonly formBuilder: FormBuilder) { }
 
@@ -39,6 +41,22 @@ export class CreateProductsComponent {
     console.log(event.target.value);
   }
 
+  onFileChange(event: any) {
+    console.log(event);
+
+
+  }
+
+  onFileSelect(event: any) {
+    console.log(event.target.files);
+    if (event.target.files.length <= 5) {
+      [...event.target.files].forEach((element: any) => {
+        this.imageArray.push(element);
+      })
+
+    }
+  }
+
   onSubmit() {
     this.getArrayOfIngrediants.forEach((element: any) => {
       let formControl = new FormControl(element);
@@ -46,6 +64,9 @@ export class CreateProductsComponent {
     });
     console.log(this.cuisineForm.value);
     this.cuisineForm.reset();
+    this.checkbox?.forEach((element: any) => {
+      element.nativeElement.checked = false
+    })
     this.getArrayOfIngrediants = [];
   }
 }

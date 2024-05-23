@@ -20,6 +20,12 @@
       <input type="text" class="form-control" formControlName="price">
     </div>
 
+    <div>
+      <label class="form-label">Cuisine image</label>
+      <input type="file" class="form-control" multiple formControlName="image" #file (change)="onFileChange($event)">
+
+    </div>
+
     <label>select: Ingrediants
     </label>
     <div class="mb-3 ">
