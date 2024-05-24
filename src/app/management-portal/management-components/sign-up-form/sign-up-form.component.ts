@@ -11,7 +11,8 @@ export class SignUpFormComponent implements OnInit {
 
 
   constructor(
-    private readonly formBuilder: FormBuilder
+    private readonly formBuilder: FormBuilder,
+    private readonly signupService: SignupService,
   ) { }
   ngOnInit(): void {
     this.buildMyRegisterForm();
@@ -26,7 +27,8 @@ export class SignUpFormComponent implements OnInit {
   }
 
   submitRegisterForm() {                    // step 2. Create a Method
-    console.log(this.userRegisterForm.value);
+    const payload = this.userRegisterForm.value;
+    console.log(payload);
   }
 
 }
