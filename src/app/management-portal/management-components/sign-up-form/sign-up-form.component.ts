@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { SignupService } from 'src/app/shared/sign-up/signup.service';
 
 @Component({
   selector: 'app-sign-up-form',
@@ -28,7 +29,12 @@ export class SignUpFormComponent implements OnInit {
 
   submitRegisterForm() {                    // step 2. Create a Method
     const payload = this.userRegisterForm.value;
-    console.log(payload);
+
+    this.signupService.createUser(payload).subscribe((res: any) => {
+      // this.toastr[data ? "success" : "error"](result);
+      console.log(res);
+    });
+
   }
 
 }
